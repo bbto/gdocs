@@ -8,7 +8,7 @@ describe "Gdocs" do
       :api_key => "AIzaSyD0zkiqbnmUL_FhBII2FZx4xMZc0F7msKE",
       :redirect_uri => "http://localhost:3000/callback"
     }
-    @gd = Gdocs::Base.new(@options)
+    @gd = Gdocs::Sheets.new(@options)
   end
   
   it "should get the access token" do
