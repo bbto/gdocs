@@ -1,3 +1,0 @@
-h1. gdocs gem
-
-gdocs gem, is a wrapper for Google Doc's service. 
