@@ -1,4 +1,4 @@
-gdocs gem
+Gdocs gem
 ===
 
 gdocs gem, is a wrapper for Google Doc's service. 
@@ -12,10 +12,29 @@ gdocs gem, is a wrapper for Google Doc's service.
     |   |  actions that modify or add information to a particular sheet.
 
 Example usage
-====  
-    @gd = Gdocs::Base.new(attributes)
-    @gd.list() #=> a list of spreasheets
+====
+
+Before using the gem, you should create an application in the google console. Since you will need a client_id, c
+lient_secret and an api_key.
+
+    attributes = {
+      :client_id => "your client id",
+      :client_secret => "client secret",
+      :api_key => "api key",
+      :redirect_uri => "http://your.application/callback/url"
+    }
+    @gd = Gdocs::Sheets.new(attributes)
+
+At this point we are able of calling the authorize_url method
     
+    @gd.authorize_url #=> Google's authorization url.
+
+Once the user authorized the application, on the redirect\_uri we will receive the user's authorization code. Which we will use
+for getting an access\_token.
+
+    @gd.authorize(auth_code)
+    
+This will return an OAuth2::AccessToken. Store access\_token[:token] and access\_token[:refresh\_token] to get persistent access to the user's data until access\_token[:expires\_at].
 
 Creating
 ====
