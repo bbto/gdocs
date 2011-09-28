@@ -5,7 +5,7 @@ gdocs gem, is a wrapper for Google Doc's service.
 
     | gdocs
     |   base.rb
-    |   sheets.rb - listar y consultar sheets.
+    |   sheets.rb - list and consult sheets
     |   |  list()
     |   |  get(id)
     |   sheet.rb
@@ -14,8 +14,8 @@ gdocs gem, is a wrapper for Google Doc's service.
 Example usage
 ====
 
-Before using the gem, you should create an application in the google console. Since you will need a client_id, c
-lient_secret and an api_key.
+Before using the gem, you should create an application in the google console (http://code.google.com/apis/accounts/docs/OAuth2.html). Since you will need a client_id, c
+lient_secret and an api_key. 
 
     attributes = {
       :client_id => "your client id",
