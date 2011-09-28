@@ -1,4 +1,4 @@
-Gdocs gem
+Gdocs gem [This gem is UNDER development]
 ===
 
 gdocs gem, is a wrapper for Google Doc's service. 
