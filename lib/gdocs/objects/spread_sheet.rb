@@ -29,6 +29,11 @@ module Gdocs
       def worksheet
         @work_sheet ||= Gdocs::Sheets::WorkSheet.fetch(@work_sheet_key)
       end
+      
+      def instance_attributes
+        return ["id", "updated", "title","contect", "worksheet_feed", "url", "author_name", "email"] 
+      end
+      
     end
   end
 end
