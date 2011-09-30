@@ -31,7 +31,7 @@ module Gdocs
       end
       
       def instance_attributes
-        return ["id", "updated", "title","contect", "worksheet_feed", "url", "author_name", "email"] 
+        return ["id", "updated", "title","content", "worksheet_feed", "url", "author_name", "email"] 
       end
       
     end
