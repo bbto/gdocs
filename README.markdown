@@ -32,9 +32,13 @@ At this point we are able of calling the authorize_url method
 Once the user authorized the application, on the redirect\_uri we will receive the user's authorization code. Which we will use
 for getting an access\_token.
 
-    @gd.authorize(auth_code)
+    @gd.get_access_token(auth_code)
     
 This will return an OAuth2::AccessToken. Store access\_token[:token] and access\_token[:refresh\_token] to get persistent access to the user's data until access\_token[:expires\_at].
+
+At this moment, we are able of fetching a list of the sheets of the user just by calling:
+    
+    @gd.list
 
 Creating
 ====
