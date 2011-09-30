@@ -4,6 +4,13 @@ module Gdocs
     end
 
     module InstanceMethods
+      
+      # Constructor of this object
+      # For the options attribute check Gdocs::Base::InstanceMethods.initialize
+      def initialize(options = {})
+        init(options)
+      end
+      
       # Initializes the object setting the common attributes.
       #
       # @param [Hash] options
