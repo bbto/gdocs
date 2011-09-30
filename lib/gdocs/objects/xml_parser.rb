@@ -9,20 +9,25 @@ module Gdocs
       
       # Redefining 
       def method_missing(m, *args, &block)
-        if attributes.include?(m.to_s.gsub("=",""))
-          if m.to_s.include?("=")
-            self.attributes[m.to_s.gsub("=","")] = *args.to_s
+        if instance_attributes.include?(m.to_s.gsub("=",""))
+          if m.to_s.include?("=") #this should change when we stablish how are we going to parse the response.
+            self.parsed_attributes[m.to_s.gsub("=","")] = *args.to_s
           else
-            result = self.attributes[m.to_s]
+            result = self.parsed_attributes[m.to_s]
           end
         else
           raise NoMethodError.new("Method missing #{m}")
         end
       end
       
-      def attributes
-        return []
+      def instance_attributes
+        return [] #should return a static array with all the attributes of this class 
       end
+      
+      def parsed_attributes
+       return nil #should return the parsed response 
+      end
+      
     end
   end
 end
