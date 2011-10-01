@@ -68,7 +68,7 @@ module Gdocs
       
       # Defining the url of the service we will fetch information from
       def site_url
-        Raise "define method site_url"
+        raise StandardError.new "define method site_url"
       end
       
       # Refreshes the token if the one provided already expired.

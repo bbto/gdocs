@@ -4,17 +4,14 @@ describe "Gdocs" do
   before(:each) do
     mock_oauth_client
     
-    @options = {
-      :client_id => "1086763820816@developer.gserviceaccount.com",
-      :client_secret => "X2MN312pliVJeI-TAj-AlNOo",
-      :api_key => "AIzaSyD0zkiqbnmUL_FhBII2FZx4xMZc0F7msKE",
-      :redirect_uri => "http://localhost:3000/callback"
-    }
-    @gd = Gdocs::Sheets.new(@options)
+
+    @gd = Gdocs::Sheets.new(valid_options_without_refresh_token)
   end
   
-  it "should get the access token" do
-    puts @gd.authorize_url
+  it "his site url should not be nil" do
+     @gd.send("site_url").should == "https://spreadsheets.google.com/feeds"
   end
+  
+  
 
 end
