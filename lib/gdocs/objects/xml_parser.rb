@@ -2,12 +2,13 @@
 module Gdocs
   module Objects
     class XmlParser
+      
       # Parses the xml string and returns an object that holds the different attributes the xml defined.
-      def parse(xml_string)
-
+      def self.parse(xml_string)
+        [Object.new, Object.new, Object.new]
       end
       
-      # Redefining 
+      # Redefining
       def method_missing(m, *args, &block)
         if instance_attributes.include?(m.to_s.gsub("=",""))
           if m.to_s.include?("=") #this should change when we stablish how are we going to parse the response.

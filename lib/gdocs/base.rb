@@ -37,7 +37,7 @@ module Gdocs
           :token_url => 'https://accounts.google.com/o/oauth2/token'
         )
 
-        refresh_token if options[:token]
+        refresh_token if options[:token] && options[:refresh_token] && options[:token_expires_at]
       end
       
       # # Returns the google's authorization url, where the user has grant permissions to the application for using the 
@@ -59,9 +59,9 @@ module Gdocs
       # @return [OAuth2::AccessToken] An OAuth access token. Store access_token[:token] and access_token[:refresh_token] to get persistent access to the user's data until access_token[:expires_at].
       def get_access_token(auth_code)
         @access_token = @oauth_client.auth_code.get_token(auth_code, :redirect_uri => @redirect_uri)
-        @token = @access_token[:token]
-        @refresh_token = @access_token[:refresh_token]
-        @token_expires_at = @access_token[:expires_at]
+        @token = @access_token.token
+        @refresh_token = @access_token.refresh_token
+        @token_expires_at = @access_token.expires_at
       end
       
       protected

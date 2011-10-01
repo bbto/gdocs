@@ -14,6 +14,7 @@ module Gdocs
 
       def initialize(xml_string)
         #initialize object with the xml
+        p "creating worksheet object"
       end
 
     end
